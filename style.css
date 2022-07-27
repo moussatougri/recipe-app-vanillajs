@@ -13,3 +13,8 @@ body {
 header {
   text-align: center;
 }
+
+form {
+  margin-top: 2rem;
+  text-align: center;
+}
