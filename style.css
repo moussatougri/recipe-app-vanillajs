@@ -6,7 +6,7 @@
 
 body {
   height: 100vh;
-  width: 100%;
+
   background: url(images/food.jpg) no-repeat center/cover;
 }
 
@@ -17,4 +17,144 @@ header {
 form {
   margin-top: 2rem;
   text-align: center;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/*media-scroller*/
+.media-container {
+  margin-top: 5rem;
+  position: relative;
+}
+
+.media-scroller,
+.media-group {
+  display: grid;
+  gap: 0.25rem;
+  grid-auto-flow: column;
+}
+
+.media-scroller {
+  overflow-x: hidden;
+  grid-auto-columns: 100%;
+  scroll-behavior: smooth;
+  padding: 0 3rem;
+  scroll-padding-inline: 3rem;
+}
+
+.media-group {
+  grid-auto-columns: 1fr;
+}
+.media-element {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.media-element > img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.detail-button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: black;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.next,
+.previous {
+  display: none;
+  align-items: center;
+  z-index: 10;
+  position: absolute;
+  width: 3rem;
+  padding: 1rem;
+  background: rgb(0 0 0 / 0);
+  opacity: 0;
+}
+
+.previous {
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.next {
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.media-group:first-child :where(.next, .previous) {
+  display: flex;
+}
+
+.media-scroller:hover :where(.next, .previous) {
+  opacity: 1;
+}
+
+:where(.next, .previous):hover {
+  background: rgb(0 0 0 / 0.3);
+}
+
+:where(.next, .previous) > svg {
+  transition: transform 75ms linear;
+  transform: scale(1);
+}
+
+:where(.next, .previous):hover > svg {
+  transform: scale(1.2);
+}
+
+.media-group:target :where(.next, .previous) {
+  display: flex;
+}
+
+.media-scroller:has(:target:not(:first-child))
+  .media-group:first-of-type
+  .next {
+  display: none;
+}
+
+/*indicators*/
+
+.navigation-indicators {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  gap: 3px;
+  top: -1rem;
+  right: 2rem;
+}
+.navigation-indicators > * {
+  width: 1rem;
+  height: 2px;
+  background: black;
+  opacity: 0.5;
+}
+
+.media-scroller:has(.media-group:target)
+  .navigation-indicators
+  > *:nth-child(1) {
+  opacity: 0.5;
+}
+
+.navigation-indicators > *:nth-child(1),
+.media-group:nth-child(1):target ~ .navigation-indicators > *:nth-child(1) {
+  opacity: 1;
+}
+
+.media-group:nth-child(2):target ~ .navigation-indicators > *:nth-child(2) {
+  opacity: 1;
+}
+
+.media-scroller:hover .navigation-indicators {
+  opacity: 1;
 }
