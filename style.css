@@ -19,13 +19,6 @@ form {
   text-align: center;
 }
 
-img,
-svg {
-  max-width: 100%;
-  display: block;
-  position: relative;
-}
-
 /*media-scroller*/
 .media-container {
   margin-top: 5rem;
@@ -56,18 +49,19 @@ svg {
 }
 
 .media-element > img {
+  cursor: pointer;
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
 .detail-button {
-  position: absolute;
+  padding: 0.4rem;
   border: none;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
   color: black;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgb(255, 255, 255);
 }
 
 .next,
