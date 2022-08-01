@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe App</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header>
       <h1>Recipe App</h1>
-    </header>
-    <main>
       <form class="search-bar">
         <input
           type="text"
@@ -20,102 +23,22 @@
         />
         <button type="submit">Submit</button>
       </form>
-      <section class="media-container">
-        <div class="media-scroller">
-          <div class="media-group" id="group1">
-            <div class="media-element">
-              <img src="/images/pexels-ash-376464.jpg" alt="" />
-              <button class="detail-button">more detail</button>
-            </div>
-            <div class="media-element">
-              <img src="/images/pexels-dana-tentis-262959.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-julie-aagaard-2097090.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-lisa-1279330.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-pixabay-461198.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-rajesh-tp-1633525.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-rajesh-tp-1633525.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-robin-stickel-70497.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-william-choquette-2641886.jpg" alt="" />
-            </div>
-            <a href="#group2" class="next">
-              <svg>
-                <use href="#next"></use>
-              </svg>
-            </a>
-          </div>
-          <div class="media-group" id="group2">
-            <a href="#group1" class="previous">
-              <svg>
-                <use href="#previous"></use>
-              </svg>
-            </a>
-
-            <div class="media-element">
-              <img src="/images/pexels-ash-376464.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="/images/pexels-dana-tentis-262959.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-julie-aagaard-2097090.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-lisa-1279330.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-pixabay-461198.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-rajesh-tp-1633525.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-rajesh-tp-1633525.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-robin-stickel-70497.jpg" alt="" />
-            </div>
-            <div class="media-element">
-              <img src="images/pexels-william-choquette-2641886.jpg" alt="" />
-            </div>
+    </header>
+    <main>
+      <section class="thumb-section">
+        <div class="tumb-tiles swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
           </div>
 
-          <div class="navigation-indicators">
-            <div></div>
-            <div></div>
-          </div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </section>
     </main>
 
-    <svg>
-      <symbol id="next" viewBox="0 0 256 512">
-        <path
-          fill="white"
-          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-        />
-      </symbol>
-
-      <symbol id="previous" viewBox="0 0 256 512">
-        <path
-          fill="white"
-          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-        />
-      </symbol>
-    </svg>
     <script src="script.js"></script>
   </body>
 </html>
