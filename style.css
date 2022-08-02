@@ -27,26 +27,27 @@ form {
   padding: 0 4%;
 }
 
-.tumb-tile > img {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 6px;
-}
-
-.swiper-slide {
+.tumb-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-.swiper-slide > p {
+.view-button {
+  cursor: pointer;
   position: absolute;
-  font-weight: bold;
-  text-align: center;
-  right: 0;
-  left: 0;
-  top: 0;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  color: #000;
+  padding: 1rem;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.tumb-tile > img {
+  background: cover;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 6px;
 }
 
 .tumb-tiles .swiper-button-prev,
@@ -78,4 +79,9 @@ form {
   font-size: 4vw;
   font-weight: bold;
   transition: transform 0.1s ease-out;
+}
+
+.tumb-tiles .swiper-button-prev:hover::after,
+.tumb-tiles .swiper-button-next:hover::after {
+  transform: scale(1.25);
 }
