@@ -7,7 +7,18 @@
 body {
   height: 100vh;
 
-  background: url(images/food.jpg) no-repeat center/cover;
+  background: url(images/pexels-monicore-1391487.jpg) no-repeat center/cover;
+}
+
+h1,
+h2,
+h3 {
+  color: white;
+}
+
+p {
+  padding: 2px;
+  color: white;
 }
 
 header {
@@ -19,6 +30,20 @@ form {
   margin-top: 1rem;
   text-align: center;
 }
+
+.search {
+  border: none;
+  padding: 0.6rem 3rem;
+}
+
+.submit-btn {
+  padding: 0.6rem;
+  color: white;
+  background-color: rgb(24, 155, 24);
+  border: none;
+  border-radius: 2px;
+}
+
 .thumb-section {
   margin-top: 3rem;
 }
@@ -31,16 +56,17 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .view-button {
   cursor: pointer;
   position: absolute;
-  padding: 1rem;
-  border-radius: 7px;
+  font-size: 12px;
+  padding: 0.5rem;
+  border-radius: 3px;
   border: none;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .tumb-tile > img {
@@ -52,13 +78,12 @@ form {
 
 .tumb-tiles .swiper-button-prev,
 .tumb-tiles .swiper-button-next {
-  height: 100%;
+  height: 60%;
   width: 3%;
   width: calc(3%-5px);
   top: 0;
   bottom: 0;
   margin: 0;
-  background-color: rgba(20, 20, 20, 0.5);
 }
 
 .tumb-tiles .swiper-button-prev {
@@ -84,4 +109,86 @@ form {
 .tumb-tiles .swiper-button-prev:hover::after,
 .tumb-tiles .swiper-button-next:hover::after {
   transform: scale(1.25);
+}
+
+.card-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-view {
+  text-align: center;
+  position: relative;
+  padding-top: 20px;
+  border: 2px solid white;
+  border-radius: 4px;
+  height: 40rem;
+  width: 30rem;
+}
+
+.detail-img {
+  border-radius: 4px;
+  margin-top: 10px;
+  aspect-ratio: 16/9;
+  height: 10rem;
+  width: auto;
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  color: #fff;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+@media only screen and (min-width: 460px) {
+  .tumb-tiles .swiper-button-prev,
+  .tumb-tiles .swiper-button-next {
+    height: 80%;
+    width: 3%;
+    width: calc(3%-5px);
+    top: 0;
+    bottom: 0;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 854px) {
+  .tumb-tiles .swiper-button-prev,
+  .tumb-tiles .swiper-button-next {
+    height: 60%;
+    width: 2%;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+  }
+
+  .tumb-tiles .swiper-button-prev::after,
+  .tumb-tiles .swiper-button-next::after {
+    color: #fff;
+    font-size: 2vw;
+    font-weight: bold;
+    transition: transform 0.1s ease-out;
+  }
+
+  .tumb-tiles.swiper {
+    padding: 0 4%;
+  }
+
+  .view-button {
+    cursor: pointer;
+    position: absolute;
+    font-size: 16px;
+
+    padding: 0.4rem;
+    border-radius: 3px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
 }
